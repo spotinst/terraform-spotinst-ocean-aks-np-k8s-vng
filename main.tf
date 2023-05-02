@@ -1,8 +1,3 @@
-provider "spotinst" {
-  # Credentials should be fetched from ENV VARS injected by Jenkins
-  token   = var.spotinst_token
-  account = var.spotinst_account
-}
 resource "spotinst_ocean_aks_np_virtual_node_group" "aks-np-vng" {
   name            = var.ocean_vng_name
   ocean_id        = var.ocean_id
