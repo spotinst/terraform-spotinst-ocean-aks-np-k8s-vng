@@ -1,8 +1,24 @@
+provider "spotinst" {
+  //  version = "~> 0.11"
+
+  # Credentials should be fetched from ENV VARS injected by Jenkins
+  token = "123456789123456789"
+  account = "act-12345"
+}
+terraform {
+  required_version = ">= 0.13.1"
+  required_providers {
+    spotinst = {
+      source  = "spotinst/spotinst"
+      version = ">=1.105.0"
+    }
+  }
+}
+
 module "ocean-aks-np-vng" {
   source           = "../.."
-  # Credentials.
-  spotinst_token            = var.spotinst_token
-  spotinst_account          = var.spotinst_account
+
+  count = 2
   ocean_vng_name            = "Terraform_AKS_NP_VNG_Test"
   ocean_id                  = "o-12345"
   headrooms_cpu_per_unit    = 6
