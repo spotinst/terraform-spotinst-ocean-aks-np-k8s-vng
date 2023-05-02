@@ -6,12 +6,23 @@ Spotinst Terraform Module to integrate existing k8s node groups with Ocean launc
 ## Usage
 
 ```hcl
+provider "spotinst" {
+  token   = "redacted"
+  account = "redacted"
+}
+terraform {
+  required_version = ">= 0.13.1"
+  required_providers {
+    spotinst = {
+      source  = "spotinst/spotinst"
+      version = ">=1.115.0"
+    }
+  }
+}
+
 module "ocean-aks-np-vng" {
   
   source = "spotinst/ocean-aks-np-k8s-vng/spotinst"
-  # Credentials.
-  spotinst_token            = var.spotinst_token
-  spotinst_account          = var.spotinst_account
   ocean_vng_name            = "Terraform_AKS_NP_VNG_Test"
   ocean_id                  = "o-12345"
   headrooms_cpu_per_unit    = 6
@@ -39,7 +50,7 @@ module "ocean-aks-np-vng" {
 
 | Name | Version |
 |------|---------|
-| spotinst/spotinst | >= 1.105.0 |
+| spotinst/spotinst | >= 1.115.0 |
 
 ## Modules
 * `ocean-aks-np-k8s` - Creates Ocean Cluster [Doc](https://registry.terraform.io/modules/spotinst/ocean-aks-np-k8s/spotinst/latest)
