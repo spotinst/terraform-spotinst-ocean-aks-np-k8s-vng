@@ -3,9 +3,17 @@
 
 
 
+<a name="v0.3.0"></a>
+## [v0.3.0] (June 5, 2023)
+
+- Spotaut 15081 add vmsize support ([#5](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/5))
+- Changelog update ([#4](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/4))
+
+
 <a name="v0.2.0"></a>
 ## [v0.2.0] (May 2, 2023)
 
+- Changelog update
 - Fix(ocean/aks): added support meta-argument "count". ([#3](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/3))
 
 
@@ -18,5 +26,6 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.3.0...HEAD
+[v0.3.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.2.0...v0.3.0
 [v0.2.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.1.0...v0.2.0
