@@ -89,3 +89,27 @@ variable "availability_zones" {
   default     = null
   description = "An Array holding Availability Zones, this configures the availability zones the Ocean may launch instances in per VNG."
 }
+variable "vmsizes_filters_min_vcpu" {
+  type        = number
+  description = "Minimum number of vcpus available."
+}
+variable "vmsizes_filters_max_vcpu" {
+  type        = number
+  description = "Maximum number of vcpus available."
+}
+variable "vmsizes_filters_min_memory_gib" {
+  type        = number
+  description = "Minimum amount of Memory (GiB)."
+}
+variable "vmsizes_filters_max_memory_gib" {
+  type        = number
+  description = "Maximum amount of Memory (GiB)."
+}
+variable "vmsizes_filters_architectures" {
+  type        = list(string)
+  description = "The filtered virtual machine types will support at least one of the architectures from this list."
+}
+variable "vmsizes_filters_series" {
+  type        = list(string)
+  description = ""
+}
