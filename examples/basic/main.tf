@@ -37,7 +37,7 @@ module "ocean-aks-np-vng" {
   fallback_to_ondemand            = true
   tags                            = { "key1": "value1", "key2": "value2" }
   labels                          = { "labelkey1": "labelvalue1","labelkey2": "labelvalue2"}
-  taints                          = [{"key":"noa","value":"veryMuch", "effect" : "NoSchedule"}]
+  taints                          = [{"key":"key1","value":"value1", "effect" : "NoSchedule"}]
   vmsizes_filters_min_vcpu        = 2
   vmsizes_filters_max_vcpu        = 16
   vmsizes_filters_min_memory_gib  = 10
