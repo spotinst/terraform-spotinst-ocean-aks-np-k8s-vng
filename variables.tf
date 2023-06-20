@@ -7,22 +7,22 @@ variable "ocean_id" {
   description = "Ocean cluster identifier."
 }
 ## autoscale_headrooms ##
-variable "headrooms_num_of_units" {
+variable "autoscale_headrooms_num_of_units" {
   type        = number
   default     = 0
   description = "The number of units to retain as headroom, where each unit has the defined headroom CPU and memory."
 }
-variable "headrooms_cpu_per_unit" {
+variable "autoscale_headrooms_cpu_per_unit" {
   type        = number
   default     = null
   description = "Configure the number of CPUs to allocate the headroom. CPUs are denoted in millicores, where 1000 millicores = 1 vCPU."
 }
-variable "headrooms_gpu_per_unit" {
+variable "autoscale_headrooms_gpu_per_unit" {
   type        = number
   default     = null
-  description = "Amont of GPU to allocate for headroom unit."
+  description = "Amount of GPU to allocate for headroom unit."
 }
-variable "headrooms_memory_per_unit" {
+variable "autoscale_headrooms_memory_per_unit" {
   type        = number
   default     = null
   description = "Configure the amount of memory (MiB) to allocate the headroom."

@@ -23,25 +23,31 @@ terraform {
 module "ocean-aks-np-vng" {
   
   source = "spotinst/ocean-aks-np-k8s-vng/spotinst"
-  ocean_vng_name            = "testVng"
-  ocean_id                  = "o-134abcd"
-  headrooms_cpu_per_unit    = 1024
-  headrooms_memory_per_unit = 512
-  headrooms_gpu_per_unit    = 0
-  headrooms_num_of_units    = 2
-  availability_zones        = ["1", "2", "3"]
-  max_pods_per_node         = 30
-  enable_node_public_ip     = true
-  os_disk_size_gb           = 30
-  os_disk_type              = "Managed"
-  os_type                   = "Linux"
-  node_min_count            = 1
-  node_max_count            = 100
-  spot_percentage           = 50
-  fallback_to_ondemand      = true
-  tags                      = { "tagKey": "env", "tagValue": "staging" }
-  labels                    = { "key": "env","value": "test"}
-  taints                    = [{"key":"taintKey","value":"taintValue", "effect" : "NoSchedule"}]
+  ocean_vng_name                            = "testVng"
+  ocean_id                                  = "o-134abcd"
+  autoscale_headrooms_cpu_per_unit          = 1024
+  autoscale_headrooms_memory_per_unit       = 512
+  autoscale_headrooms_gpu_per_unit          = 0
+  autoscale_headrooms_num_of_units          = 2
+  availability_zones                        = ["1", "2", "3"]
+  max_pods_per_node                         = 30
+  enable_node_public_ip                     = true
+  os_disk_size_gb                           = 30
+  os_disk_type                              = "Managed"
+  os_type                                   = "Linux"
+  node_min_count                            = 1
+  node_max_count                            = 100
+  spot_percentage                           = 50
+  fallback_to_ondemand                      = true
+  tags                                      = { "tagKey": "env", "tagValue": "staging" }
+  labels                                    = { "key": "env","value": "test"}
+  taints                                    = [{"key":"taintKey","value":"taintValue", "effect" : "NoSchedule"}]
+  vmsizes_filters_min_vcpu                  = 2
+  vmsizes_filters_max_vcpu                  = 16
+  vmsizes_filters_min_memory_gib            = 10
+  vmsizes_filters_max_memory_gib            = 18
+  vmsizes_filters_series                    = ["D v3", "Dds_v4", "Dsv2"]
+  vmsizes_filters_architectures             = ["X86_64"]
 
 }
 ```
