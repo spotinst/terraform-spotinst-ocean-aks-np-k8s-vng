@@ -23,25 +23,25 @@ terraform {
 module "ocean-aks-np-vng" {
   
   source = "spotinst/ocean-aks-np-k8s-vng/spotinst"
-  ocean_vng_name            = "Terraform_AKS_NP_VNG_Test"
-  ocean_id                  = "o-12345"
-  headrooms_cpu_per_unit    = 6
-  headrooms_memory_per_unit = 10
-  headrooms_gpu_per_unit    = 4
-  headrooms_num_of_units    = 10
-  availability_zones        = ["1", "3"]
-  max_pods_per_node         = 110
-  enable_node_public_ip     = false
-  os_disk_size_gb           = 128
+  ocean_vng_name            = "testVng"
+  ocean_id                  = "o-134abcd"
+  headrooms_cpu_per_unit    = 1024
+  headrooms_memory_per_unit = 512
+  headrooms_gpu_per_unit    = 0
+  headrooms_num_of_units    = 2
+  availability_zones        = ["1", "2", "3"]
+  max_pods_per_node         = 30
+  enable_node_public_ip     = true
+  os_disk_size_gb           = 30
   os_disk_type              = "Managed"
   os_type                   = "Linux"
-  node_min_count            = 0
-  node_max_count            = 1000
-  spot_percentage           = 100
+  node_min_count            = 1
+  node_max_count            = 100
+  spot_percentage           = 50
   fallback_to_ondemand      = true
-  tags                      = { "key1": "value1", "key2": "value2" }
-  labels                    = { "labelkey1": "labelvalue1","labelkey2": "labelvalue2"}
-  taints                    = [{"key":"noa","value":"veryMuch", "effect" : "NoSchedule"}]
+  tags                      = { "tagKey": "env", "tagValue": "staging" }
+  labels                    = { "key": "env","value": "test"}
+  taints                    = [{"key":"taintKey","value":"taintValue", "effect" : "NoSchedule"}]
 
 }
 ```
