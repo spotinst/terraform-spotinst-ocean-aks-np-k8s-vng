@@ -78,6 +78,49 @@ We use GitHub issues for tracking bugs and feature requests. Please use these co
 
 Please see the [contribution guidelines](.github/CONTRIBUTING.md).
 
+<!-- BEGIN_TF_DOCS -->
+## Modules
+
+No modules.
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_ocean_vng_name"></a> [ocean\_vng\_name](#input\_ocean\_vng\_name) | Enter a name for the virtual node group. | `string` | `null` | yes |
+| <a name="input_ocean_id"></a> [ocean\_id](#input\_ocean\_id) | The Ocean cluster identifier. Required for Launch Spec creation. | `string` | `null` | yes |
+| <a name="input_headrooms_num_of_units"></a> [headrooms\_num\_of\_units](#input\_headrooms\_num\_of\_units) | The number of units to retain as headroom, where each unit has the defined headroom CPU, memory. | `number` | `null` | no |
+| <a name="input_headrooms_cpu_per_unit"></a> [headrooms\_cpu\_per\_unit](#input\_headrooms\_cpu\_per\_unit) | Configure the number of CPUs to allocate for each headroom unit. CPUs are denoted in millicores, where 1000 millicores = 1 vCPU. | `number` | `null` | no |
+| <a name="input_headrooms_gpu_per_unit"></a> [headrooms\_gpu\_per\_unit](#input\_headrooms\_gpu\_per\_unit) | Amont of GPU to allocate for headroom unit. | `number` | `null` | no |
+| <a name="input_headrooms_memory_per_unit"></a> [headrooms\_memory\_per\_unit](#input\_headrooms\_memory\_per\_unit) | Configure the amount of memory (MiB) to allocate the headroom | `number` | `null` | no |
+| <a name="input_max_pods_per_node"></a> [max\_pods\_per\_node](#input\_max\_pods\_per\_node) | The maximum number of pods per node in the node pools. | `number` | `null` | no |
+| <a name="input_enable_node_public_ip"></a> [enable\_node\_public\_ip](#input\_enable\_node\_public\_ip) | Enable node public IP. | `bool` | `null` | no |
+| <a name="input_os_disk_size_gb"></a> [os\_disk\_size\_gb](#input\_os\_disk\_size\_gb) | The size of the OS disk in GB. | `number` | `null` | no |
+| <a name="input_os_disk_type"></a> [os\_disk\_type](#input\_os\_disk\_type) | The type of the OS disk. | `string` | `null` | no |
+| <a name="input_os_type"></a> [os\_type](#input\_os\_type) | The os type of the os disk. | `string` | `null` | no |
+| <a name="input_node_min_count"></a> [node\_min\_count](#input\_node\_min\_count) | Minimum node count limit. | `number` | `null` | no |
+| <a name="input_node_max_count"></a> [node\_max\_count](#input\_node\_max\_count) | Maximum node count limit. | `number` | `null` | no |
+| <a name="input_spot_percentage"></a> [spot\_percentage](#input\_spot\_percentage) | Percentage of spot VMs to maintain. | `number` | `100` | no |
+| <a name="input_fallback_to_ondemand"></a> [fallback_to_ondemand](#input\_fallback_to_ondemand) | If no spot instance markets are available, enable Ocean to launch on-demand instances instead. | `bool` | `true` | no |
+| <a name="input_taints"></a> [taints](#input\_taints) | Add taints to a virtual node group. | `list(map(string))` | `null` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | A maximum of 10 unique key-value pairs for VM tags in the virtual node group. | ` map(string)` | `null` | no |
+| <a name="input_labels"></a> [labels](#input\_labels) | An array of labels to add to the virtual node group.Only custom user labels are allowed, and not Kubernetes built-in labels or Spot internal labels. | ` map(string)` | `null` | no |
+| <a name="input_availability_zones"></a> [availability\_zones](#input\_availability\_zones) | An Array holding Availability Zones, this configures the availability zones the Ocean may launch instances in per VNG. | `list(string)` | `null` | no |
+| <a name="input_vmsizes_filters_min_vcpu"></a> [vmsizes\_filters\_min\_vcpu](#input\_vmsizes\_filters\_min\_vcpu) | Minimum number of vcpus available. | `number` | `null` | no |
+| <a name="input_vmsizes_filters_max_vcpu"></a> [vmsizes\_filters\_max\_vcpu](#input\_vmsizes\_filters\_max\_vcpu) | Maximum number of vcpus available. | `number` | `null` | no |
+| <a name="input_vmsizes_filters_min_memory_gib"></a> [vmsizes\_filters\_min\_memory\_gib](#input\_vmsizes\_filters\_min\_memory\_gib) | Minimum amount of Memory (GiB). | `number` | `null` | no |
+| <a name="input_vmsizes_filters_max_memory_gib"></a> [vmsizes\_filters\_max\_memory\_gib](#input\_vmsizes\_filters\_max\_memory\_gib) | Maximum amount of Memory (GiB). | `number` | `null` | no |
+| <a name="input_vmsizes_filters_architectures"></a> [vmsizes\_filters\_architectures](#input\_vmsizes\_filters\_architectures) | The filtered vm sizes will support at least one of the architectures from this list. x86_64 includes both intel64 and amd64. | `list(string)` | `null` | no |
+| <a name="input_vmsizes_filters_series"></a> [vmsizes_filters_series](#input\_vmsizes_filters_series) | Vm sizes belonging to a series from the list will be available for scaling | `list(string)` | `null` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+
+| <a name="output_vng_id"></a> [vng\_id](#output\_vng\_id) | The VirtualNodeGroup ID |
+<!-- END_TF_DOCS -->
+
 ## License
 
 Code is licensed under the [Apache License 2.0](LICENSE).
