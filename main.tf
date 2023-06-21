@@ -3,10 +3,10 @@ resource "spotinst_ocean_aks_np_virtual_node_group" "aks-np-vng" {
   ocean_id        = var.ocean_id
 
   headrooms {
-    cpu_per_unit    = var.headrooms_cpu_per_unit
-    memory_per_unit = var.headrooms_memory_per_unit
-    gpu_per_unit    = var.headrooms_gpu_per_unit
-    num_of_units    = var.headrooms_num_of_units
+    cpu_per_unit    = var.autoscale_headrooms_cpu_per_unit
+    memory_per_unit = var.autoscale_headrooms_memory_per_unit
+    gpu_per_unit    = var.autoscale_headrooms_gpu_per_unit
+    num_of_units    = var.autoscale_headrooms_num_of_units
   }
 
   availability_zones=var.availability_zones

@@ -95,10 +95,10 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_ocean_vng_name"></a> [ocean\_vng\_name](#input\_ocean\_vng\_name) | Enter a name for the virtual node group. | `string` | `null` | yes |
 | <a name="input_ocean_id"></a> [ocean\_id](#input\_ocean\_id) | The Ocean cluster identifier. Required for Launch Spec creation. | `string` | `null` | yes |
-| <a name="input_headrooms_num_of_units"></a> [headrooms\_num\_of\_units](#input\_headrooms\_num\_of\_units) | The number of units to retain as headroom, where each unit has the defined headroom CPU, memory. | `number` | `null` | no |
-| <a name="input_headrooms_cpu_per_unit"></a> [headrooms\_cpu\_per\_unit](#input\_headrooms\_cpu\_per\_unit) | Configure the number of CPUs to allocate for each headroom unit. CPUs are denoted in millicores, where 1000 millicores = 1 vCPU. | `number` | `null` | no |
-| <a name="input_headrooms_gpu_per_unit"></a> [headrooms\_gpu\_per\_unit](#input\_headrooms\_gpu\_per\_unit) | Amont of GPU to allocate for headroom unit. | `number` | `null` | no |
-| <a name="input_headrooms_memory_per_unit"></a> [headrooms\_memory\_per\_unit](#input\_headrooms\_memory\_per\_unit) | Configure the amount of memory (MiB) to allocate the headroom | `number` | `null` | no |
+| <a name="input_autoscale_headrooms_num_of_units"></a> [autoscale\_headrooms\_num\_of\_units](#input\_autoscale\_headrooms\_num\_of\_units) | The number of units to retain as headroom, where each unit has the defined headroom CPU, memory. | `number` | `null` | no |
+| <a name="input_autoscale_headrooms_cpu_per_unit"></a> [autoscale\_headrooms\_cpu\_per\_unit](#input\_autoscale\_headrooms\_cpu\_per\_unit) | Configure the number of CPUs to allocate for each headroom unit. CPUs are denoted in millicores, where 1000 millicores = 1 vCPU. | `number` | `null` | no |
+| <a name="input_autoscale_headrooms_gpu_per_unit"></a> [autoscale\_headrooms\_gpu\_per\_unit](#input\_autoscale\_headrooms\_gpu\_per\_unit) | Amont of GPU to allocate for headroom unit. | `number` | `null` | no |
+| <a name="input_autoscale_headrooms_memory_per_unit"></a> [autoscale\_headrooms\_memory\_per\_unit](#input\_autoscale\_headrooms\_memory\_per\_unit) | Configure the amount of memory (MiB) to allocate the headroom | `number` | `null` | no |
 | <a name="input_max_pods_per_node"></a> [max\_pods\_per\_node](#input\_max\_pods\_per\_node) | The maximum number of pods per node in the node pools. | `number` | `null` | no |
 | <a name="input_enable_node_public_ip"></a> [enable\_node\_public\_ip](#input\_enable\_node\_public\_ip) | Enable node public IP. | `bool` | `null` | no |
 | <a name="input_os_disk_size_gb"></a> [os\_disk\_size\_gb](#input\_os\_disk\_size\_gb) | The size of the OS disk in GB. | `number` | `null` | no |
