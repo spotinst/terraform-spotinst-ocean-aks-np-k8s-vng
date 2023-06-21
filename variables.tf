@@ -4,28 +4,28 @@ variable "ocean_vng_name" {
 }
 variable "ocean_id" {
   type        = string
-  description = "Ocean ID"
+  description = "Ocean cluster identifier."
 }
 ## autoscale_headrooms ##
-variable "headrooms_num_of_units" {
+variable "autoscale_headrooms_num_of_units" {
   type        = number
   default     = 0
-  description = "The number of units to retain as headroom, where each unit has the defined headroom CPU, memory and GPU."
+  description = "The number of units to retain as headroom, where each unit has the defined headroom CPU and memory."
 }
-variable "headrooms_cpu_per_unit" {
+variable "autoscale_headrooms_cpu_per_unit" {
   type        = number
   default     = null
-  description = "Optionally configure the number of CPUs to allocate for each headroom unit. CPUs are denoted in millicores, where 1000 millicores = 1 vCPU."
+  description = "Configure the number of CPUs to allocate the headroom. CPUs are denoted in millicores, where 1000 millicores = 1 vCPU."
 }
-variable "headrooms_gpu_per_unit" {
+variable "autoscale_headrooms_gpu_per_unit" {
   type        = number
   default     = null
-  description = "Optionally configure the number of GPUS to allocate for each headroom unit."
+  description = "Amount of GPU to allocate for headroom unit."
 }
-variable "headrooms_memory_per_unit" {
+variable "autoscale_headrooms_memory_per_unit" {
   type        = number
   default     = null
-  description = "Optionally configure the amount of memory (MiB) to allocate for each headroom unit."
+  description = "Configure the amount of memory (MiB) to allocate the headroom."
 }
 variable "max_pods_per_node" {
   type        = number
@@ -33,7 +33,7 @@ variable "max_pods_per_node" {
 }
 variable "enable_node_public_ip" {
   type        = bool
-  description = "enable node public IP."
+  description = "Enable node public IP."
 }
 variable "os_disk_size_gb" {
   type        = number
@@ -72,17 +72,17 @@ variable "taints" {
     effect = string
   }))
   default     = null
-  description = "taints / toleration"
+  description = "Add taints to a virtual node group"
 }
 variable "tags" {
   type        = map(string)
   default     = null
-  description = "Tags to be added to resources"
+  description = "A maximum of 10 unique key-value pairs for VM tags in the virtual node group."
 }
 variable "labels" {
   type        = map(string)
   default     = null
-  description = "An array of labels to add to the virtual node group.Only custom user labels are allowed, and not Kubernetes built-in labels or Spot internal labels."
+  description = "An array of labels to add to the virtual node group. Only custom user labels are allowed, and not Kubernetes built-in labels or Spot internal labels."
 }
 variable "availability_zones" {
   type        = list(string)
@@ -107,9 +107,9 @@ variable "vmsizes_filters_max_memory_gib" {
 }
 variable "vmsizes_filters_architectures" {
   type        = list(string)
-  description = "The filtered virtual machine types will support at least one of the architectures from this list."
+  description = "The filtered vm sizes will support at least one of the architectures from this list. x86_64 includes both intel64 and amd64."
 }
 variable "vmsizes_filters_series" {
   type        = list(string)
-  description = ""
+  description = "Vm sizes belonging to a series from the list will be available for scaling."
 }
