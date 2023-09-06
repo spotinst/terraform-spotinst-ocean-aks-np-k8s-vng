@@ -3,9 +3,17 @@
 
 
 
+<a name="v0.5.0"></a>
+## [v0.5.0] (September 6, 2023)
+
+- Added default values for all variables in variables.tf file ([#9](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/9))
+- [src] removed common workflow
+
+
 <a name="v0.4.0"></a>
 ## [v0.4.0] (June 21, 2023)
 
+- Changelog for 0.4.0 Version ([#8](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/8))
 - Added documentation for fields in module and updated description ([#7](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/7))
 - [src] added common workflow
 
@@ -34,7 +42,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.5.0...HEAD
+[v0.5.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.4.0...v0.5.0
 [v0.4.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.2.0...v0.3.0
 [v0.2.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.1.0...v0.2.0
