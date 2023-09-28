@@ -31,6 +31,7 @@ module "ocean-aks-np-vng" {
   os_disk_size_gb                           = 128
   os_disk_type                              = "Managed"
   os_type                                   = "Linux"
+  os_sku                                    = "Ubuntu"
   node_min_count                            = 0
   node_max_count                            = 1000
   spot_percentage                           = 100

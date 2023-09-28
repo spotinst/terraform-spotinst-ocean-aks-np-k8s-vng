@@ -52,6 +52,11 @@ variable "os_type" {
   default     = null
   description = "The os type of the os disk."
 }
+variable "os_sku" {
+  type        = string
+  default     = null
+  description = "The OS SKU of the OS type. Must correlate with the os type."
+}
 variable "node_min_count" {
   type        = number
   default     = null
