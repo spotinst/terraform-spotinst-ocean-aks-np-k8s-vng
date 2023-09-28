@@ -12,11 +12,12 @@ resource "spotinst_ocean_aks_np_virtual_node_group" "aks-np-vng" {
   availability_zones=var.availability_zones
 
   //vng nodePoolProperties
-  max_pods_per_node     =var.max_pods_per_node
+  max_pods_per_node     = var.max_pods_per_node
   enable_node_public_ip = var.enable_node_public_ip
   os_disk_size_gb       = var.os_disk_size_gb
   os_disk_type          = var.os_disk_type
   os_type               = var.os_type
+  os_sku                = var.os_sku
 
 
   //vng nodeCountLimits
