@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.6.0"></a>
+## [v0.6.0] (September 29, 2023)
+
+- added support for `os_sku` ([#11](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/11))
+
+
 <a name="v0.5.0"></a>
 ## [v0.5.0] (September 6, 2023)
 
+- changelog v0.5.0 ([#10](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/10))
 - Added default values for all variables in variables.tf file ([#9](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/9))
 - [src] removed common workflow
 
@@ -42,7 +49,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.6.0...HEAD
+[v0.6.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.5.0...v0.6.0
 [v0.5.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.4.0...v0.5.0
 [v0.4.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.2.0...v0.3.0
