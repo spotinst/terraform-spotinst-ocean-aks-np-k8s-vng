@@ -18,6 +18,9 @@ resource "spotinst_ocean_aks_np_virtual_node_group" "aks-np-vng" {
   os_disk_type          = var.os_disk_type
   os_type               = var.os_type
   os_sku                = var.os_sku
+  kubernetes_version    = var.kubernetes_version
+  pod_subnet_ids        = var.pod_subnet_ids
+  vnet_subnet_ids       = var.vnet_subnet_ids
 
 
   //vng nodeCountLimits
