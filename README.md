@@ -36,6 +36,9 @@ module "ocean-aks-np-vng" {
   os_disk_type                              = "Managed"
   os_type                                   = "Linux"
   os_sku                                    = "Ubuntu"
+  kubernetes_version                        = "1.26"
+  pod_subnet_ids                            = ["/subscriptions/123456-1234-1234-1234-123456789/resourceGroups/ExampleResourceGroup/providers/Microsoft.Network/virtualNetworks/ExampleVirtualNetwork/subnets/default"]
+  vnet_subnet_ids                           = ["/subscriptions/123456-1234-1234-1234-123456789/resourceGroups/ExampleResourceGroup/providers/Microsoft.Network/virtualNetworks/ExampleVirtualNetwork/subnets/default"]
   node_min_count                            = 1
   node_max_count                            = 100
   spot_percentage                           = 50
@@ -106,6 +109,9 @@ No modules.
 | <a name="input_os_disk_type"></a> [os\_disk\_type](#input\_os\_disk\_type)                                                                          | The type of the OS disk. | `string` | `null` | no |
 | <a name="input_os_type"></a> [os\_type](#input\_os\_type)                                                                                           | The os type of the os disk. | `string` | `null` | no |
 | <a name="input_os_sku"></a> [os\_sku](#input\_os\_type)                                                                                             | The OS SKU of the OS type. Must correlate with the os type. | `string` | `null` | no |
+| <a name="input_kubernetes_version"></a> [kubernetes\_version](#input\_os\_type)                                                                                         | The desired Kubernetes version of the launched nodes. In case the value is null, the Kubernetes version of the control plane is used. | `string`            | `null` |    no    |
+| <a name="input_pod_subnet_ids"></a> [pod\_subnet\_ids](#input\_os\_type)                                                                                                | The IDs of subnets in an existing VNet into which to assign pods in the cluster (requires azure network-plugin). | `list(string)`      | `null` |    no    |
+| <a name="input_vnet_subnet_ids"></a> [vnet\_subnet\_ids](#input\_os\_type)                                                                                              | The IDs of subnets in an existing VNet into which to assign nodes in the cluster (requires azure network-plugin). | `list(string)`      | `null` |    no    |
 | <a name="input_node_min_count"></a> [node\_min\_count](#input\_node\_min\_count)                                                                    | Minimum node count limit. | `number` | `null` | no |
 | <a name="input_node_max_count"></a> [node\_max\_count](#input\_node\_max\_count)                                                                    | Maximum node count limit. | `number` | `null` | no |
 | <a name="input_spot_percentage"></a> [spot\_percentage](#input\_spot\_percentage)                                                                   | Percentage of spot VMs to maintain. | `number` | `100` | no |

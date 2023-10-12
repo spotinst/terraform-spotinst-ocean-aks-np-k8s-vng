@@ -57,6 +57,21 @@ variable "os_sku" {
   default     = null
   description = "The OS SKU of the OS type. Must correlate with the os type."
 }
+variable "kubernetes_version" {
+  type        = string
+  default     = null
+  description = "The desired Kubernetes version of the launched nodes. In case the value is null, the Kubernetes version of the control plane is used."
+}
+variable "pod_subnet_ids" {
+  type        = list(string)
+  default     = null
+  description = "The IDs of subnets in an existing VNet into which to assign pods in the cluster (requires azure network-plugin)."
+}
+variable "vnet_subnet_ids" {
+  type        = list(string)
+  default     = null
+  description = "The IDs of subnets in an existing VNet into which to assign nodes in the cluster (requires azure network-plugin)."
+}
 variable "node_min_count" {
   type        = number
   default     = null
