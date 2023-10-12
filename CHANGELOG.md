@@ -3,9 +3,16 @@
 
 
 
-<a name="v0.6.0"></a>
-## [v0.6.0] (September 29, 2023)
+<a name="v0.7.0"></a>
+## [v0.7.0] (October 12, 2023)
 
+- feat (ocean/aks-np-vng): added `pod_subnet_ids` and `vnet_subnet_ids` fields ([#13](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/13))
+
+
+<a name="v0.6.0"></a>
+## [v0.6.0] (September 28, 2023)
+
+- Changelog 0.6.0 ([#12](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/12))
 - added support for `os_sku` ([#11](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/11))
 
 
@@ -49,7 +56,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.7.0...HEAD
+[v0.7.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.6.0...v0.7.0
 [v0.6.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.5.0...v0.6.0
 [v0.5.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.4.0...v0.5.0
 [v0.4.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.3.0...v0.4.0
