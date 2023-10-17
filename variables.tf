@@ -151,12 +151,12 @@ variable "vmsizes_filters_exclude_series" {
   default     = null
   description = "Vm sizes belonging to a series from the list will not be available for scaling."
 }
-variable "accelerated_networking" {
+variable "vmsizes_filters_accelerated_networking" {
   type        = string
   default     = null
   description = "In case acceleratedNetworking is set to Enabled, accelerated networking applies only to the VM that enables it."
 }
-variable "disk_performance" {
+variable "vmsizes_filters_disk_performance" {
   type        = string
   default     = null
   description = "The filtered vm sizes will support at least one of the classes from this list."

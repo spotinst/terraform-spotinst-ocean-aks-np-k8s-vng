@@ -33,12 +33,20 @@ resource "spotinst_ocean_aks_np_virtual_node_group" "aks-np-vng" {
 
   // vmSizes filter
   filters {
-    min_vcpu = var.vmsizes_filters_min_vcpu
-    max_vcpu = var.vmsizes_filters_max_vcpu
-    min_memory_gib = var.vmsizes_filters_min_memory_gib
-    max_memory_gib = var.vmsizes_filters_max_memory_gib
-    architectures = var.vmsizes_filters_architectures
-    series = var.vmsizes_filters_series
+    min_vcpu                = var.vmsizes_filters_min_vcpu
+    max_vcpu                = var.vmsizes_filters_max_vcpu
+    min_memory_gib          = var.vmsizes_filters_min_memory_gib
+    max_memory_gib          = var.vmsizes_filters_max_memory_gib
+    architectures           = var.vmsizes_filters_architectures
+    series                  = var.vmsizes_filters_series
+    exclude_series          = var.vmsizes_filters_exclude_series
+    accelerated_networking  = var.vmsizes_filters_accelerated_networking
+    disk_performance        = var.vmsizes_filters_disk_performance
+    min_gpu                 = var.vmsizes_filters_min_gpu
+    max_gpu                 = var.vmsizes_filters_max_gpu
+    min_nics                = var.vmsizes_filters_min_nics
+    vm_types                = var.vmsizes_filters_vm_types
+    min_data                = var.vmsizes_filters_min_data
   }
 
   tags   = var.tags
