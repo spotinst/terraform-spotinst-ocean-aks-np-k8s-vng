@@ -146,3 +146,43 @@ variable "vmsizes_filters_series" {
   default     = null
   description = "Vm sizes belonging to a series from the list will be available for scaling."
 }
+variable "vmsizes_filters_exclude_series" {
+  type        = list(string)
+  default     = null
+  description = "Vm sizes belonging to a series from the list will not be available for scaling."
+}
+variable "accelerated_networking" {
+  type        = string
+  default     = null
+  description = "In case acceleratedNetworking is set to Enabled, accelerated networking applies only to the VM that enables it."
+}
+variable "disk_performance" {
+  type        = string
+  default     = null
+  description = "The filtered vm sizes will support at least one of the classes from this list."
+}
+variable "vmsizes_filters_min_gpu" {
+  type        = number
+  default     = null
+  description = "Minimum number of GPUs available."
+}
+variable "vmsizes_filters_max_gpu" {
+  type        = number
+  default     = null
+  description = "Maximum number of GPUs available."
+}
+variable "vmsizes_filters_min_nics" {
+  type        = number
+  default     = null
+  description = "Minimum number of network interfaces."
+}
+variable "vmsizes_filters_min_data" {
+  type        = number
+  default     = null
+  description = "Minimum number of data disks available."
+}
+variable "vmsizes_filters_vm_types" {
+  type        = list(string)
+  default     = null
+  description = "The filtered vm types will belong to one of the vm types from this list."
+}
