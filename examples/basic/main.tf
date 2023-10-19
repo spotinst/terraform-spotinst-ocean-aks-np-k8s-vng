@@ -2,14 +2,14 @@ provider "spotinst" {
   //  version = "~> 0.11"
 
   # Credentials should be fetched from ENV VARS injected by Jenkins
-  token = "123456789123456789"
-  account = "act-12345"
+  token = "d31949623321d13a43d49176d854cf3fc2b3682cab2604b2d92565af439f6cc8"
+  account = "act-c23ac1f8"
 }
 terraform {
   required_version = ">= 0.13.1"
   required_providers {
     spotinst = {
-      source  = "spotinst/spotinst"
+      source  = "terraform-spotinst/local/spotinst"
       version = ">=1.105.0"
     }
   }
@@ -20,7 +20,7 @@ module "ocean-aks-np-vng" {
 
   count = 1
   ocean_vng_name                            = "Terraform_AKS_NP_VNG_Test"
-  ocean_id                                  = "o-12345"
+  ocean_id                                  = "o-57e8c561"
   autoscale_headrooms_cpu_per_unit          = 6
   autoscale_headrooms_memory_per_unit       = 10
   autoscale_headrooms_gpu_per_unit          = 4
@@ -33,8 +33,8 @@ module "ocean-aks-np-vng" {
   os_type                                   = "Linux"
   os_sku                                    = "Ubuntu"
   kubernetes_version                        = "1.26"
-  pod_subnet_ids                            = ["/subscriptions/123456-1234-1234-1234-123456789/resourceGroups/ExampleResourceGroup/providers/Microsoft.Network/virtualNetworks/ExampleVirtualNetwork/subnets/default"]
-  vnet_subnet_ids                           = ["/subscriptions/123456-1234-1234-1234-123456789/resourceGroups/ExampleResourceGroup/providers/Microsoft.Network/virtualNetworks/ExampleVirtualNetwork/subnets/default"]
+  #pod_subnet_ids                            = ["/subscriptions/123456-1234-1234-1234-123456789/resourceGroups/ExampleResourceGroup/providers/Microsoft.Network/virtualNetworks/ExampleVirtualNetwork/subnets/default"]
+  #vnet_subnet_ids                           = ["/subscriptions/123456-1234-1234-1234-123456789/resourceGroups/ExampleResourceGroup/providers/Microsoft.Network/virtualNetworks/ExampleVirtualNetwork/subnets/default"]
   node_min_count                            = 0
   node_max_count                            = 1000
   spot_percentage                           = 100
@@ -42,18 +42,18 @@ module "ocean-aks-np-vng" {
   tags                                      = { "key1": "value1", "key2": "value2" }
   labels                                    = { "labelkey1": "labelvalue1","labelkey2": "labelvalue2"}
   taints                                    = [{"key":"key1","value":"value1", "effect" : "NoSchedule"}]
-  vmsizes_filters_min_vcpu                 = 4
-  vmsizes_filters_max_vcpu                 = 96
-  vmsizes_filters_min_memory_gib           = 14.0
-  vmsizes_filters_max_memory_gib           = 900.0
-  vmsizes_filters_series                   = ["NC","NV"]
-  vmsizes_filters_exclude_series           = ["HB","HC"]
-  vmsizes_filters_architectures            = ["X86_64", "INTEL64", "ARM64","AMD64"]
+  vmsizes_filters_min_vcpu                 = 2
+  vmsizes_filters_max_vcpu                 = 16
+  vmsizes_filters_min_memory_gib           = 8
+  vmsizes_filters_max_memory_gib           = 16
+  vmsizes_filters_series                   = ["D v3", "Dds_v4", "Dsv2", "A", "A v2"]
+  vmsizes_filters_exclude_series           = ["E v3","Esv3", "Eas_v5"]
+  vmsizes_filters_architectures            = ["X86_64"]
   vmsizes_filters_accelerated_networking   = "Disabled"
   vmsizes_filters_disk_performance         = "Standard"
-  vmsizes_filters_min_gpu                  = 4.0
-  vmsizes_filters_max_gpu                  = 8.0
+  #vmsizes_filters_min_gpu                  = 0
+  #vmsizes_filters_max_gpu                  = 2
   vmsizes_filters_min_nics                 = 1
-  vmsizes_filters_vm_types                 = ["generalPurpose", "GPU"]
+  vmsizes_filters_vm_types                 = ["generalPurpose"]
   vmsizes_filters_min_data                 = 1
 }
