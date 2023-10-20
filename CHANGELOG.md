@@ -1,11 +1,6 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
-<a name="v0.8.0"></a>
-## [v0.8.0] (October 19, 2023)
-
-- feat (ocean/aks-np-vng): added `accelerated_networking`, `disk_performance`, `min_gpu`, `max_gpu`, `min_nics`, `min_data` and `vm_types` fields ([#15](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/15))
-
 <a name="v0.7.0"></a>
 ## [v0.7.0] (October 12, 2023)
 
