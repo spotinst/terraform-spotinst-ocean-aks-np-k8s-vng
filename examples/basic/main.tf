@@ -2,14 +2,14 @@ provider "spotinst" {
   //  version = "~> 0.11"
 
   # Credentials should be fetched from ENV VARS injected by Jenkins
-  token = "d31949623321d13a43d49176d854cf3fc2b3682cab2604b2d92565af439f6cc8"
-  account = "act-c23ac1f8"
+  token = "123456789123456789"
+  account = "act-12345"
 }
 terraform {
   required_version = ">= 0.13.1"
   required_providers {
     spotinst = {
-      source  = "terraform-spotinst/local/spotinst"
+      source  = "spotinst/spotinst"
       version = ">=1.105.0"
     }
   }
@@ -20,7 +20,7 @@ module "ocean-aks-np-vng" {
 
   count = 1
   ocean_vng_name                            = "Terraform_AKS_NP_VNG_Test"
-  ocean_id                                  = "o-57e8c561"
+  ocean_id                                  = "o-12345"
   autoscale_headrooms_cpu_per_unit          = 6
   autoscale_headrooms_memory_per_unit       = 10
   autoscale_headrooms_gpu_per_unit          = 4
@@ -33,8 +33,8 @@ module "ocean-aks-np-vng" {
   os_type                                   = "Linux"
   os_sku                                    = "Ubuntu"
   kubernetes_version                        = "1.26"
-  #pod_subnet_ids                            = ["/subscriptions/123456-1234-1234-1234-123456789/resourceGroups/ExampleResourceGroup/providers/Microsoft.Network/virtualNetworks/ExampleVirtualNetwork/subnets/default"]
-  #vnet_subnet_ids                           = ["/subscriptions/123456-1234-1234-1234-123456789/resourceGroups/ExampleResourceGroup/providers/Microsoft.Network/virtualNetworks/ExampleVirtualNetwork/subnets/default"]
+  pod_subnet_ids                            = ["/subscriptions/123456-1234-1234-1234-123456789/resourceGroups/ExampleResourceGroup/providers/Microsoft.Network/virtualNetworks/ExampleVirtualNetwork/subnets/default"]
+  vnet_subnet_ids                           = ["/subscriptions/123456-1234-1234-1234-123456789/resourceGroups/ExampleResourceGroup/providers/Microsoft.Network/virtualNetworks/ExampleVirtualNetwork/subnets/default"]
   node_min_count                            = 0
   node_max_count                            = 1000
   spot_percentage                           = 100
