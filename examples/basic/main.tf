@@ -42,10 +42,18 @@ module "ocean-aks-np-vng" {
   tags                                      = { "key1": "value1", "key2": "value2" }
   labels                                    = { "labelkey1": "labelvalue1","labelkey2": "labelvalue2"}
   taints                                    = [{"key":"key1","value":"value1", "effect" : "NoSchedule"}]
-  vmsizes_filters_min_vcpu                  = 2
-  vmsizes_filters_max_vcpu                  = 16
-  vmsizes_filters_min_memory_gib            = 10
-  vmsizes_filters_max_memory_gib            = 18
-  vmsizes_filters_series                    = ["D v3"]
-  vmsizes_filters_architectures             = ["X86_64"]
+  vmsizes_filters_min_vcpu                 = 2
+  vmsizes_filters_max_vcpu                 = 16
+  vmsizes_filters_min_memory_gib           = 8
+  vmsizes_filters_max_memory_gib           = 16
+  vmsizes_filters_series                   = ["D v3", "Dds_v4", "Dsv2", "A", "A v2"]
+  vmsizes_filters_exclude_series           = ["E v3","Esv3", "Eas_v5"]
+  vmsizes_filters_architectures            = ["X86_64"]
+  vmsizes_filters_accelerated_networking   = "Disabled"
+  vmsizes_filters_disk_performance         = "Standard"
+  #vmsizes_filters_min_gpu                  = 0
+  #vmsizes_filters_max_gpu                  = 2
+  vmsizes_filters_min_nics                 = 1
+  vmsizes_filters_vm_types                 = ["generalPurpose"]
+  vmsizes_filters_min_data                 = 1
 }
