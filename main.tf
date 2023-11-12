@@ -46,7 +46,7 @@ resource "spotinst_ocean_aks_np_virtual_node_group" "aks-np-vng" {
     max_gpu                 = var.vmsizes_filters_max_gpu
     min_nics                = var.vmsizes_filters_min_nics
     vm_types                = var.vmsizes_filters_vm_types
-    min_data                = var.vmsizes_filters_min_data
+    min_disk                = var.vmsizes_filters_min_disk
   }
 
   tags   = var.tags
