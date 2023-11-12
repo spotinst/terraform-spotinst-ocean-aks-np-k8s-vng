@@ -176,7 +176,7 @@ variable "vmsizes_filters_min_nics" {
   default     = null
   description = "Minimum number of network interfaces."
 }
-variable "vmsizes_filters_min_data" {
+variable "vmsizes_filters_min_disk" {
   type        = number
   default     = null
   description = "Minimum number of data disks available."

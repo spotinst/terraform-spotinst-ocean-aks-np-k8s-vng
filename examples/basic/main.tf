@@ -55,5 +55,5 @@ module "ocean-aks-np-vng" {
   #vmsizes_filters_max_gpu                  = 2
   vmsizes_filters_min_nics                 = 1
   vmsizes_filters_vm_types                 = ["generalPurpose"]
-  vmsizes_filters_min_data                 = 1
+  vmsizes_filters_min_disk                 = 1
 }
