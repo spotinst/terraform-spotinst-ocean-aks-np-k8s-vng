@@ -186,3 +186,55 @@ variable "vmsizes_filters_vm_types" {
   default     = null
   description = "The filtered vm types will belong to one of the vm types from this list."
 }
+## Update Policy - update_policy ##
+variable "should_roll" {
+  type        = bool
+  default     = false
+  description = "Should the cluster be rolled for configuration updates"
+}
+## roll_config ##
+variable "conditioned_roll" {
+  type        = bool
+  default     = null
+  description = "Default: false. Spot will perform a cluster Roll in accordance with a relevant modification of the cluster’s settings. When set to true , only specific changes in the cluster’s configuration will trigger a cluster roll (such as availability_zones, max_pods_per_node, enable_node_public_ip, os_disk_size_gb, os_disk_type, os_sku, kubernetes_version, vnet_subnet_ids, pod_subnet_ids, labels, taints, tags)."
+}
+variable "respect_pdb" {
+  type        = bool
+  default     = null
+  description = "Default: true. During the roll, if the parameter is set to True we honor PDB during the instance replacement."
+}
+variable "batch_size_percentage" {
+  type        = number
+  default     = 20
+  description = "Value as a percent to set the size of a batch in a roll. Valid values are 0-100. In case of null as value, the default value in the backend will be 20%."
+}
+variable "vng_ids" {
+  type        = list(string)
+  default     = null
+  description = "List of virtual node group identifiers to be rolled. Each identifier is a string. vngIds can be null, and cannot be used together with nodeNames and nodePoolNames."
+}
+variable "batch_min_healthy_percentage" {
+  type        = number
+  default     = null
+  description = "Default: 50. Indicates the threshold of minimum healthy nodes in single batch. If the amount of healthy nodes in single batch is under the threshold, the roll will fail. If exists, the parameter value will be in range of 1-100. In case of null as value, the default value in the backend will be 50%. Value of param should represent the number in percentage (%) of the batch."
+}
+variable "comment" {
+  type        = string
+  default     = null
+  description = "Add a comment description for the roll. The comment is limited to 256 chars and optional."
+}
+variable "node_pool_names" {
+  type        = list(string)
+  default     = null
+  description = "List of node pools to be rolled. Each node pool name is a string. nodePoolNames can be null, and cannot be used together with nodeNames and vngIds."
+}
+variable "respect_restrict_scale_down" {
+  type        = bool
+  default     = null
+  description = "Default: false. During the roll, if the parameter is set to true we honor Restrict Scale Down label during the nodes replacement."
+}
+variable "node_names" {
+  type        = list(string)
+  default     = null
+  description = "List of node names to be rolled. Each identifier is a string. nodeNames can be null, and cannot be used together with nodePoolNames and vngIds."
+}

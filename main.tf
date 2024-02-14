@@ -60,4 +60,18 @@ resource "spotinst_ocean_aks_np_virtual_node_group" "aks-np-vng" {
       effect = taints.value["effect"]
     }
   }
+  update_policy {
+    should_roll                     = var.should_roll
+    conditioned_roll                = var.conditioned_roll
+    roll_config {
+      respect_pdb                   = var.respect_pdb
+      batch_size_percentage         = var.batch_size_percentage
+      vng_ids                       = var.vng_ids
+      batch_min_healthy_percentage  = var.batch_min_healthy_percentage
+      comment                       = var.comment
+      node_pool_names               = var.node_pool_names
+      respect_restrict_scale_down   = var.respect_restrict_scale_down
+      node_names                    = var.node_names
+    }
+  }
 }

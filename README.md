@@ -52,6 +52,8 @@ module "ocean-aks-np-vng" {
   vmsizes_filters_max_memory_gib            = 18
   vmsizes_filters_series                    = ["D v3", "Dds_v4", "Dsv2"]
   vmsizes_filters_architectures             = ["X86_64"]
+  should_roll                               = true
+  batch_size_percentage                     = 33
 
 }
 ```
@@ -134,6 +136,17 @@ No modules.
 | <a name="input_vmsizes_filters_min_nics"></a> [vmsizes_filters_min_nics](#input\_vmsizes_filters_min_nics)                                           | Minimum number of network interfaces.                                                                                                                | `number`            | `null` |    no     |
 | <a name="input_vmsizes_filters_min_disk"></a> [vmsizes_filters_min_disk](#input\_vmsizes_filters_min_data)                                        | Minimum number of data disks available.                                                                                                              | `number`            | `null` |    no     |
 | <a name="input_vmsizes_filters_vm_types"></a> [vmsizes_filters_vm_types](#input\_vmsizes_filters_vm_types)                                           | The filtered vm types will belong to one of the vm types from this list.                                                                             | `list(string)`      | `null` |    no     |
+| <a name="input_should_roll"></a> [should\_roll](#input\_should\_roll) | Should the cluster be rolled for configuration updates | `bool`| `false` | no |
+| <a name="input_conditioned_roll"></a> [conditioned\_roll](#input\_conditioned\_roll) | Default: false. Spot will perform a cluster Roll in accordance with a relevant modification of the cluster’s settings. When set to true , only specific changes in the cluster’s configuration will trigger a cluster roll (such as AMI, Key Pair, user data, instance types, load balancers, etc).| `bool`  | `null` | no |
+| <a name="input_respect_pdb"></a> [respect\_pdb](#input\_respect\_pdb) | During the roll, if the parameter is set to True we honor PDB during the instance replacement. | `bool` | `true` | no |
+| <a name="input_batch_size_percentage"></a> [batch\_size\_percentage](#input\_batch\_size\_percentage) | Value as a percent to set the size of a batch in a roll. Valid values are 0-100. In case of null as value, the default value in the backend will be 20%. | `number` | `20` | no |
+| <a name="input_vng_ids"></a> [vng\_ids](#input\_vng\_ids) | List of virtual node group identifiers to be rolled. Each identifier is a string. vngIds can be null, and cannot be used together with nodeNames and nodePoolNames.| `list(string)` | `null` | no |
+| <a name="input_batch_min_healthy_percentage"></a> [batch\_min\_healthy\_percentage](#input\_batch\_min\_healthy\_percentage) | Default: 50. Indicates the threshold of minimum healthy instances in single batch. If the amount of healthy instances in single batch is under the threshold, the cluster roll will fail. If exists, the parameter value will be in range of 1-100. In case of null as value, the default value in the backend will be 50%. Value of param should represent the number in percentage (%) of the batch. | `number`| `null` | no |
+| <a name="input_comment"></a> [comment](#input\_comment) | Add a comment description for the roll. The comment is limited to 256 chars and optional.| `string`| `null` | no |
+| <a name="input_node_pool_names"></a> [node\_pool\_names](#input\_node\_pool\_names)                                                  | List of node pools to be rolled. Each node pool name is a string. nodePoolNames can be null, and cannot be used together with nodeNames and vngIds.| `list(string)` | `null` | no |
+| <a name="input_respect_restrict_scale_down"></a> [respect\_restrict\_scale\_down](#input\_respect\_restrict\_scale\_down)                                                                                  | During the roll, if the parameter is set to true we honor Restrict Scale Down label during the nodes replacement. | `bool`| `false` | no |
+| <a name="input_node_names"></a> [node\_names](#input\_node\_names)                                                  | List of node names to be rolled. Each identifier is a string. nodeNames can be null, and cannot be used together with nodePoolNames and vngIds.| `list(string)` | `null` | no |
+
 
 ## Outputs
 
