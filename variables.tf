@@ -195,13 +195,13 @@ variable "should_roll" {
 ## roll_config ##
 variable "conditioned_roll" {
   type        = bool
-  default     = null
+  default     = false
   description = "Default: false. Spot will perform a cluster Roll in accordance with a relevant modification of the cluster’s settings. When set to true , only specific changes in the cluster’s configuration will trigger a cluster roll (such as availability_zones, max_pods_per_node, enable_node_public_ip, os_disk_size_gb, os_disk_type, os_sku, kubernetes_version, vnet_subnet_ids, pod_subnet_ids, labels, taints, tags)."
 }
 variable "respect_pdb" {
   type        = bool
-  default     = null
-  description = "Default: true. During the roll, if the parameter is set to True we honor PDB during the instance replacement."
+  default     = true
+  description = "Default: true. During the roll, if the parameter is set to true we honor PDB during the nodes replacement."
 }
 variable "batch_size_percentage" {
   type        = number
@@ -215,7 +215,7 @@ variable "vng_ids" {
 }
 variable "batch_min_healthy_percentage" {
   type        = number
-  default     = null
+  default     = 50
   description = "Default: 50. Indicates the threshold of minimum healthy nodes in single batch. If the amount of healthy nodes in single batch is under the threshold, the roll will fail. If exists, the parameter value will be in range of 1-100. In case of null as value, the default value in the backend will be 50%. Value of param should represent the number in percentage (%) of the batch."
 }
 variable "comment" {
@@ -230,7 +230,7 @@ variable "node_pool_names" {
 }
 variable "respect_restrict_scale_down" {
   type        = bool
-  default     = null
+  default     = false
   description = "Default: false. During the roll, if the parameter is set to true we honor Restrict Scale Down label during the nodes replacement."
 }
 variable "node_names" {

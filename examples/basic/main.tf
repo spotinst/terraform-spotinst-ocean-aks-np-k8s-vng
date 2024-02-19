@@ -56,6 +56,6 @@ module "ocean-aks-np-vng" {
   vmsizes_filters_min_nics                 = 1
   vmsizes_filters_vm_types                 = ["generalPurpose"]
   vmsizes_filters_min_disk                 = 1
-  should_roll                              = true
-  batch_size_percentage                    = 33
+  should_roll                              = false
+  batch_size_percentage                    = 25
 }
