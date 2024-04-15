@@ -186,6 +186,11 @@ variable "vmsizes_filters_vm_types" {
   default     = null
   description = "The filtered vm types will belong to one of the vm types from this list."
 }
+variable "vmsizes_filters_gpu_types" {
+  type        = list(string)
+  default     = null
+  description = "The filtered gpu types will belong to one of the gpu types from this list. Supported GPU Types: `nvidia-tesla-v100`, `amd-radeon-instinct-mi25`, `nvidia-a10`, `nvidia-tesla-a100`, `nvidia-tesla-k80`, `nvidia-tesla-m60`, `nvidia-tesla-p100`, `nvidia-tesla-p40`, `nvidia-tesla-t4`, `nvidia-tesla-h100`."
+}
 ## Update Policy - update_policy ##
 variable "should_roll" {
   type        = bool
