@@ -21,7 +21,14 @@ resource "spotinst_ocean_aks_np_virtual_node_group" "aks-np-vng" {
   kubernetes_version    = var.kubernetes_version
   pod_subnet_ids        = var.pod_subnet_ids
   vnet_subnet_ids       = var.vnet_subnet_ids
-
+  dynamic "linux_os_config" {
+    for_each = var.linux_os_config != null ? [var.linux_os_config] : []
+    content {
+      sysctls {
+        vm_max_map_count = linux_os_config.value.vm_max_map_count
+      }
+    }
+  }
 
   //vng nodeCountLimits
   min_count = var.node_min_count
