@@ -243,3 +243,9 @@ variable "node_names" {
   default     = null
   description = "List of node names to be rolled. Each identifier is a string. nodeNames can be null, and cannot be used together with nodePoolNames and vngIds."
 }
+variable "linux_os_config" {
+  type = object({
+    vm_max_map_count = optional(number,null)
+  })
+  default = null
+}
