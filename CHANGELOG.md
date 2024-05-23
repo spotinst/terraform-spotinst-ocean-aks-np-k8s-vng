@@ -3,9 +3,16 @@
 
 
 
-<a name="v0.11.0"></a>
-## [v0.11.0] (April 15, 2024)
+<a name="v0.12.0"></a>
+## [v0.12.0] (May 23, 2024)
 
+- added support for `vm_max_map_count` field in `linux_os_config` ([#23](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/23))
+
+
+<a name="v0.11.0"></a>
+## [v0.11.0] (April 16, 2024)
+
+- Changelog v0.11.0 ([#22](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/22))
 - added gpu_types in filters block ([#21](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/21))
 
 
@@ -85,7 +92,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.11.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.12.0...HEAD
+[v0.12.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.11.0...v0.12.0
 [v0.11.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.10.0...v0.11.0
 [v0.10.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.9.0...v0.10.0
 [v0.9.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.8.0...v0.9.0
