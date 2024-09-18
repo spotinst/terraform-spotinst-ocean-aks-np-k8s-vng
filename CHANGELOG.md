@@ -1,6 +1,9 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+- Merge branch 'main' into changelog_v0.13.0
+- updated controller v2 reference ([#25](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/25))
+- Changelog v0.13.0
 
 
 <a name="v0.13.0"></a>
