@@ -3,13 +3,17 @@
 
 
 
+<a name="v0.14.0"></a>
+## [v0.14.0] (December 11, 2024)
+
+- added support for `shutdown_hours` in `scheduling` object ([#27](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/27))
+
+
 <a name="v0.13.0"></a>
 ## [v0.13.0] (September 18, 2024)
 
-- changelog v0.13.0
-- Merge branch 'main' into changelog_v0.13.0
+- Changelog v0.13.0 ([#26](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/26))
 - updated controller v2 reference ([#25](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/25))
-- Changelog v0.13.0
 
 
 <a name="v0.12.0"></a>
@@ -102,7 +106,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.13.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.14.0...HEAD
+[v0.14.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.13.0...v0.14.0
 [v0.13.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.12.0...v0.13.0
 [v0.12.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.11.0...v0.12.0
 [v0.11.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.10.0...v0.11.0
