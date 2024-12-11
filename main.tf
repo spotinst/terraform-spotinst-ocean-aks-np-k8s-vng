@@ -82,4 +82,15 @@ resource "spotinst_ocean_aks_np_virtual_node_group" "aks-np-vng" {
       node_names                    = var.node_names
     }
   }
+
+  # Scheduling ##
+  scheduling {
+    dynamic "shutdown_hours" {
+      for_each = var.shutdown_hours != null ? [var.shutdown_hours] : []
+      content {
+        is_enabled   = shutdown_hours.value.is_enabled
+        time_windows = shutdown_hours.value.time_windows
+      }
+    }
+  }
 }
