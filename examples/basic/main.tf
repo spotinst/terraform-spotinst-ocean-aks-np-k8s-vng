@@ -61,4 +61,7 @@ module "ocean-aks-np-vng" {
   vmsizes_filters_gpu_types                = ["nvidia-tesla-p100","nvidia-tesla-t4"]
   should_roll                              = false
   batch_size_percentage                    = 25
+
+  shutdown_hours                           = { is_enabled = false,
+                                                 time_windows = ["Fri:15:30-Sat:13:30", "Sun:15:30-Mon:13:30"] }
 }

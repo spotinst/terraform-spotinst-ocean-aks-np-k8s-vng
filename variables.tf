@@ -249,3 +249,12 @@ variable "linux_os_config" {
   })
   default = null
 }
+# scheduling
+variable "shutdown_hours" {
+  type = object({
+    is_enabled   = bool
+    time_windows = list(string)
+  })
+  default     = null
+  description = "shutdown_hours object"
+}
