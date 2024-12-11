@@ -69,7 +69,7 @@ module "ocean-aks-np-vng" {
 
 | Name | Version    |
 |------|------------|
-| spotinst/spotinst | >= 1.201.0 |
+| spotinst/spotinst | >= 1.115.0 |
 
 ## Modules
 * `ocean-aks-np-k8s` - Creates Ocean Cluster [Doc](https://registry.terraform.io/modules/spotinst/ocean-aks-np-k8s/spotinst/latest)
