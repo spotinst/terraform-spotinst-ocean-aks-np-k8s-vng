@@ -2,6 +2,10 @@
 ## [Unreleased]
 
 
+<a name="v0.15.0"></a>
+## [v0.15.0] (April 6, 2026)
+
+- added support for `draining_timeout` in `strategy` object ([#28](https://github.com/spotinst/terraform-provider-spotinst/pull/681))
 
 <a name="v0.14.0"></a>
 ## [v0.14.0] (December 11, 2024)

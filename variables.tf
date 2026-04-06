@@ -92,6 +92,11 @@ variable "fallback_to_ondemand" {
   default     = true
   description = "If no spot instance markets are available, enable Ocean to launch on-demand instances instead."
 }
+variable "draining_timeout" {
+  type        = number
+  default     = null
+  description = "Time in seconds to allow the node to drain before it is terminated."
+}
 variable "taints" {
   type = list(object({
     key    = string
