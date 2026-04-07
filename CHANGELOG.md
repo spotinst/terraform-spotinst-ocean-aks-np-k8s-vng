@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.15.0"></a>
+## [v0.15.0] (April 7, 2026)
+
+- Sptaut 19521 tf aks object addition draining timeout under strategy ([#29](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/29))
+
+
 <a name="v0.14.0"></a>
 ## [v0.14.0] (December 11, 2024)
 
+- Changelog Update ([#28](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/28))
 - added support for `shutdown_hours` in `scheduling` object ([#27](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/27))
 
 
@@ -106,7 +113,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.14.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.15.0...HEAD
+[v0.15.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.14.0...v0.15.0
 [v0.14.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.13.0...v0.14.0
 [v0.13.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.12.0...v0.13.0
 [v0.12.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.11.0...v0.12.0
