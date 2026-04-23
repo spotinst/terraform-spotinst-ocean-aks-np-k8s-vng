@@ -97,6 +97,11 @@ variable "draining_timeout" {
   default     = null
   description = "Time in seconds to allow the node to drain before it is terminated."
 }
+variable "should_utilize_commitments" {
+  type        = bool
+  default     = false
+  description = "Determines whether to utilize any existing Azure Savings Plans or Reserved Instances associated with the subscription for On-Demand VMs."
+}
 variable "taints" {
   type = list(object({
     key    = string
