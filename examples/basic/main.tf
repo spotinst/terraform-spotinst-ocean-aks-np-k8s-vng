@@ -41,6 +41,7 @@ module "ocean-aks-np-vng" {
   node_max_count                            = 1000
   spot_percentage                           = 100
   draining_timeout                          = 600
+  should_utilize_commitments                = false
   fallback_to_ondemand                      = true
   tags                                      = { "key1": "value1", "key2": "value2" }
   labels                                    = { "labelkey1": "labelvalue1","labelkey2": "labelvalue2"}
