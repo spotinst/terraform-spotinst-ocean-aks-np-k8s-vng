@@ -46,7 +46,7 @@ module "ocean-aks-np-vng" {
   spot_percentage                           = 50
   fallback_to_ondemand                      = true
   draining_timeout                          = 600
-  should_utilize_commitments                = false
+  should_utilize_commitments                = true
   tags                                      = { "tagKey": "env", "tagValue": "staging" }
   labels                                    = { "key": "env","value": "test"}
   taints                                    = [{"key":"taintKey","value":"taintValue", "effect" : "NoSchedule"}]
