@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.16.0"></a>
+## [v0.16.0] (April 24, 2026)
+
+- Sptaut 19543 fr terraform ocean azure support for should_utilize_commitments in spotinst ocean aks vng np ([#31](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/31))
+
+
 <a name="v0.15.0"></a>
 ## [v0.15.0] (April 7, 2026)
 
+- changelog ([#30](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/30))
 - Sptaut 19521 tf aks object addition draining timeout under strategy ([#29](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/29))
 
 
@@ -113,7 +120,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.15.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.16.0...HEAD
+[v0.16.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.15.0...v0.16.0
 [v0.15.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.14.0...v0.15.0
 [v0.14.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.13.0...v0.14.0
 [v0.13.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.12.0...v0.13.0
