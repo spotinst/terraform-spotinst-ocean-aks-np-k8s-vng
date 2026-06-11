@@ -102,6 +102,11 @@ variable "should_utilize_commitments" {
   default     = false
   description = "Determines whether to utilize any existing Azure Savings Plans or Reserved Instances associated with the subscription for On-Demand VMs."
 }
+variable "restrict_scale_down" {
+  type        = bool
+  default     = false
+  description = "When set to true, nodes in this VNG are protected from scale-down as long as they have reschedulable workloads running."
+}
 variable "taints" {
   type = list(object({
     key    = string

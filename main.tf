@@ -39,6 +39,7 @@ resource "spotinst_ocean_aks_np_virtual_node_group" "aks-np-vng" {
   fallback_to_ondemand = var.fallback_to_ondemand
   draining_timeout     = var.draining_timeout
   should_utilize_commitments = var.should_utilize_commitments
+  restrict_scale_down = var.restrict_scale_down
 
   // vmSizes filter
   filters {
