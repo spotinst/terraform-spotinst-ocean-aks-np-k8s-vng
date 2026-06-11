@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.17.0"></a>
+## [v0.17.0] (June 11, 2026)
+
+- feat(ocean Azure/VNG): Added support for RestrictScaleDown Object. ([#33](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/33))
+
+
 <a name="v0.16.0"></a>
 ## [v0.16.0] (April 24, 2026)
 
+- changelog ([#32](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/32))
 - Sptaut 19543 fr terraform ocean azure support for should_utilize_commitments in spotinst ocean aks vng np ([#31](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/31))
 
 
@@ -120,7 +127,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.16.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.17.0...HEAD
+[v0.17.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.16.0...v0.17.0
 [v0.16.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.15.0...v0.16.0
 [v0.15.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.14.0...v0.15.0
 [v0.14.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.13.0...v0.14.0
