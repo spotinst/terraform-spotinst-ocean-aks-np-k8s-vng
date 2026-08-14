@@ -21,6 +21,7 @@ module "ocean-aks-np-vng" {
   count = 1
   ocean_vng_name                            = "Terraform_AKS_NP_VNG_Test"
   ocean_id                                  = "o-12345"
+  autoscale_auto_headroom_percentage        = 5
   autoscale_headrooms_cpu_per_unit          = 6
   autoscale_headrooms_memory_per_unit       = 10
   autoscale_headrooms_gpu_per_unit          = 4

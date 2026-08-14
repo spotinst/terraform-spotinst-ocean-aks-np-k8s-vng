@@ -7,6 +7,11 @@ variable "ocean_id" {
   description = "Ocean cluster identifier."
 }
 ## autoscale_headrooms ##
+variable "autoscale_auto_headroom_percentage" {
+  type        = number
+  default     = null
+  description = "Optionally set a number between 0-200 to control the percentage of VNG resources dedicated to automatic headroom."
+}
 variable "autoscale_headrooms_num_of_units" {
   type        = number
   default     = null

@@ -2,6 +2,8 @@ resource "spotinst_ocean_aks_np_virtual_node_group" "aks-np-vng" {
   name            = var.ocean_vng_name
   ocean_id        = var.ocean_id
 
+  auto_headroom_percentage = var.autoscale_auto_headroom_percentage
+
   headrooms {
     cpu_per_unit    = var.autoscale_headrooms_cpu_per_unit
     memory_per_unit = var.autoscale_headrooms_memory_per_unit
