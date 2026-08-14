@@ -3,9 +3,16 @@
 
 
 
+<a name="v0.18.0"></a>
+## [v0.18.0] (August 14, 2026)
+
+- feat(ocean Azure/VNG): Added support for AutoHeadroomPercentage Object under AutoScale object. ([#35](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/35))
+
+
 <a name="v0.17.0"></a>
 ## [v0.17.0] (June 11, 2026)
 
+- changelog ([#34](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/34))
 - feat(ocean Azure/VNG): Added support for RestrictScaleDown Object. ([#33](https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/issues/33))
 
 
@@ -127,7 +134,8 @@
 - Initial commit
 
 
-[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.17.0...HEAD
+[Unreleased]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.18.0...HEAD
+[v0.18.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.17.0...v0.18.0
 [v0.17.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.16.0...v0.17.0
 [v0.16.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.15.0...v0.16.0
 [v0.15.0]: https://github.com/spotinst/terraform-spotinst-ocean-aks-np-k8s-vng/compare/v0.14.0...v0.15.0
