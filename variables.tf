@@ -42,6 +42,11 @@ variable "enable_node_public_ip" {
   default     = null
   description = "Enable node public IP."
 }
+variable "encryption_at_host" {
+  type        = bool
+  default     = false
+  description = "Whether to enable host-based encryption for nodes launched from this virtual node group. When set to true, use vmSizes.preferredVmSizes to provide compatible VM sizes. IMPORTANT: This setting is immutable at the Azure infrastructure level once nodes are launched. Changing this value requires a roll operation for new nodes to reflect the updated configuration."
+}
 variable "os_disk_size_gb" {
   type        = number
   default     = null

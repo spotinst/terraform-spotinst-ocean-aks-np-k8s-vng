@@ -29,6 +29,7 @@ module "ocean-aks-np-vng" {
   availability_zones                        = ["1", "3"]
   max_pods_per_node                         = 110
   enable_node_public_ip                     = false
+  encryption_at_host                        = true
   os_disk_size_gb                           = 128
   os_disk_type                              = "Managed"
   os_type                                   = "Linux"

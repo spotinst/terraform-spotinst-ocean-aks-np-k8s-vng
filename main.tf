@@ -16,6 +16,7 @@ resource "spotinst_ocean_aks_np_virtual_node_group" "aks-np-vng" {
   //vng nodePoolProperties
   max_pods_per_node     = var.max_pods_per_node
   enable_node_public_ip = var.enable_node_public_ip
+  encryption_at_host    = var.encryption_at_host
   os_disk_size_gb       = var.os_disk_size_gb
   os_disk_type          = var.os_disk_type
   os_type               = var.os_type
