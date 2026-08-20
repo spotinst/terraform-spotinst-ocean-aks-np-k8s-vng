@@ -216,6 +216,11 @@ variable "vmsizes_filters_gpu_types" {
   default     = null
   description = "The filtered gpu types will belong to one of the gpu types from this list. Supported GPU Types: `nvidia-tesla-v100`, `amd-radeon-instinct-mi25`, `nvidia-a10`, `nvidia-tesla-a100`, `nvidia-tesla-k80`, `nvidia-tesla-m60`, `nvidia-tesla-p100`, `nvidia-tesla-p40`, `nvidia-tesla-t4`, `nvidia-tesla-h100`."
 }
+variable "vmsizes_preferred_vm_sizes" {
+  type        = list(string)
+  default     = null
+  description = "Preferred VM sizes for this virtual node group. Used when nodePoolProperties.encryptionAtHost is true to constrain launches to compatible sizes."
+}
 ## Update Policy - update_policy ##
 variable "should_roll" {
   type        = bool

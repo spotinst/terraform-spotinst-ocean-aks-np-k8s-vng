@@ -64,6 +64,7 @@ module "ocean-aks-np-vng" {
   vmsizes_filters_vm_types                 = ["generalPurpose","GPU"]
   vmsizes_filters_min_disk                 = 1
   vmsizes_filters_gpu_types                = ["nvidia-tesla-p100","nvidia-tesla-t4"]
+  vmsizes_preferred_vm_sizes               = ["Standard_D4s_v3","Standard_D8s_v3"]
   should_roll                              = false
   batch_size_percentage                    = 25
 
