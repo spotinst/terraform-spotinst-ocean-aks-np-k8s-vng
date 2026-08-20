@@ -101,12 +101,7 @@ resource "spotinst_ocean_aks_np_virtual_node_group" "aks-np-vng" {
     gpu_types               = var.vmsizes_filters_gpu_types
   }
 
-  dynamic "vm_sizes" {
-    for_each = var.vmsizes_preferred_vm_sizes != null ? [var.vmsizes_preferred_vm_sizes] : []
-    content {
-      preferred_vm_sizes = vm_sizes.value
-    }
-  }
+  preferred_vm_sizes = var.vmsizes_preferred_vm_sizes
 
   tags   = var.tags
   labels = var.labels
