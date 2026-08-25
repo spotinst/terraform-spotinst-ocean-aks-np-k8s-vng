@@ -29,6 +29,7 @@ module "ocean-aks-np-vng" {
   availability_zones                        = ["1", "3"]
   max_pods_per_node                         = 110
   enable_node_public_ip                     = false
+  encryption_at_host                        = true
   os_disk_size_gb                           = 128
   os_disk_type                              = "Managed"
   os_type                                   = "Linux"
@@ -63,8 +64,58 @@ module "ocean-aks-np-vng" {
   vmsizes_filters_vm_types                 = ["generalPurpose","GPU"]
   vmsizes_filters_min_disk                 = 1
   vmsizes_filters_gpu_types                = ["nvidia-tesla-p100","nvidia-tesla-t4"]
+  vmsizes_preferred_vm_sizes               = ["Standard_D4s_v3","Standard_D8s_v3"]
   should_roll                              = false
   batch_size_percentage                    = 25
+
+  # Local DNS Profile
+  local_dns_profile = {
+    mode = "Required"
+    vnet_dns_overrides = {
+      "." = {
+        query_logging                   = "Error"
+        protocol                        = "PreferUDP"
+        forward_destination              = "VnetDNS"
+        forward_policy                   = "Sequential"
+        max_concurrent                   = 1000
+        cache_duration_in_seconds        = 3600
+        serve_stale_duration_in_seconds  = 3600
+        serve_stale                      = "Immediate"
+      }
+      "cluster.local" = {
+        query_logging                   = "Error"
+        protocol                        = "ForceTCP"
+        forward_destination              = "ClusterCoreDNS"
+        forward_policy                   = "Sequential"
+        max_concurrent                   = 1000
+        cache_duration_in_seconds        = 3600
+        serve_stale_duration_in_seconds  = 3600
+        serve_stale                      = "Immediate"
+      }
+    }
+    kube_dns_overrides = {
+      "." = {
+        query_logging                   = "Error"
+        protocol                        = "PreferUDP"
+        forward_destination              = "ClusterCoreDNS"
+        forward_policy                   = "Sequential"
+        max_concurrent                   = 1000
+        cache_duration_in_seconds        = 3600
+        serve_stale_duration_in_seconds  = 3600
+        serve_stale                      = "Immediate"
+      }
+      "cluster.local" = {
+        query_logging                   = "Error"
+        protocol                        = "ForceTCP"
+        forward_destination              = "ClusterCoreDNS"
+        forward_policy                   = "Sequential"
+        max_concurrent                   = 1000
+        cache_duration_in_seconds        = 3600
+        serve_stale_duration_in_seconds  = 3600
+        serve_stale                      = "Immediate"
+      }
+    }
+  }
 
   shutdown_hours                           = { is_enabled = false,
                                                  time_windows = ["Fri:15:30-Sat:13:30", "Sun:15:30-Mon:13:30"] }

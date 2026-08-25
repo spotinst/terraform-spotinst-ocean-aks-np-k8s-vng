@@ -16,6 +16,7 @@ resource "spotinst_ocean_aks_np_virtual_node_group" "aks-np-vng" {
   //vng nodePoolProperties
   max_pods_per_node     = var.max_pods_per_node
   enable_node_public_ip = var.enable_node_public_ip
+  encryption_at_host    = var.encryption_at_host
   os_disk_size_gb       = var.os_disk_size_gb
   os_disk_type          = var.os_disk_type
   os_type               = var.os_type
@@ -31,6 +32,44 @@ resource "spotinst_ocean_aks_np_virtual_node_group" "aks-np-vng" {
       }
     }
   }
+
+  dynamic "local_dns_profile" {
+    for_each = var.local_dns_profile != null ? [var.local_dns_profile] : []
+    content {
+      mode = local_dns_profile.value.mode
+
+      dynamic "vnet_dns_overrides" {
+        for_each = local_dns_profile.value.vnet_dns_overrides != null ? local_dns_profile.value.vnet_dns_overrides : {}
+        content {
+          zone                             = vnet_dns_overrides.key
+          query_logging                    = vnet_dns_overrides.value.query_logging
+          protocol                         = vnet_dns_overrides.value.protocol
+          forward_destination              = vnet_dns_overrides.value.forward_destination
+          forward_policy                   = vnet_dns_overrides.value.forward_policy
+          max_concurrent                   = vnet_dns_overrides.value.max_concurrent
+          cache_duration_in_seconds        = vnet_dns_overrides.value.cache_duration_in_seconds
+          serve_stale_duration_in_seconds  = vnet_dns_overrides.value.serve_stale_duration_in_seconds
+          serve_stale                      = vnet_dns_overrides.value.serve_stale
+        }
+      }
+
+      dynamic "kube_dns_overrides" {
+        for_each = local_dns_profile.value.kube_dns_overrides != null ? local_dns_profile.value.kube_dns_overrides : {}
+        content {
+          zone                             = kube_dns_overrides.key
+          query_logging                    = kube_dns_overrides.value.query_logging
+          protocol                         = kube_dns_overrides.value.protocol
+          forward_destination              = kube_dns_overrides.value.forward_destination
+          forward_policy                   = kube_dns_overrides.value.forward_policy
+          max_concurrent                   = kube_dns_overrides.value.max_concurrent
+          cache_duration_in_seconds        = kube_dns_overrides.value.cache_duration_in_seconds
+          serve_stale_duration_in_seconds  = kube_dns_overrides.value.serve_stale_duration_in_seconds
+          serve_stale                      = kube_dns_overrides.value.serve_stale
+        }
+      }
+    }
+  }
+
 
   //vng nodeCountLimits
   min_count = var.node_min_count
@@ -61,6 +100,8 @@ resource "spotinst_ocean_aks_np_virtual_node_group" "aks-np-vng" {
     min_disk                = var.vmsizes_filters_min_disk
     gpu_types               = var.vmsizes_filters_gpu_types
   }
+
+  preferred_vm_sizes = var.vmsizes_preferred_vm_sizes
 
   tags   = var.tags
   labels = var.labels

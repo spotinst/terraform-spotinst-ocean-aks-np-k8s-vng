@@ -42,6 +42,11 @@ variable "enable_node_public_ip" {
   default     = null
   description = "Enable node public IP."
 }
+variable "encryption_at_host" {
+  type        = bool
+  default     = false
+  description = "Whether to enable host-based encryption for nodes launched from this virtual node group. When set to true, use vmSizes.preferredVmSizes to provide compatible VM sizes. IMPORTANT: This setting is immutable at the Azure infrastructure level once nodes are launched. Changing this value requires a roll operation for new nodes to reflect the updated configuration."
+}
 variable "os_disk_size_gb" {
   type        = number
   default     = null
@@ -211,6 +216,11 @@ variable "vmsizes_filters_gpu_types" {
   default     = null
   description = "The filtered gpu types will belong to one of the gpu types from this list. Supported GPU Types: `nvidia-tesla-v100`, `amd-radeon-instinct-mi25`, `nvidia-a10`, `nvidia-tesla-a100`, `nvidia-tesla-k80`, `nvidia-tesla-m60`, `nvidia-tesla-p100`, `nvidia-tesla-p40`, `nvidia-tesla-t4`, `nvidia-tesla-h100`."
 }
+variable "vmsizes_preferred_vm_sizes" {
+  type        = list(string)
+  default     = null
+  description = "Preferred VM sizes for this virtual node group. Used when nodePoolProperties.encryptionAtHost is true to constrain launches to compatible sizes."
+}
 ## Update Policy - update_policy ##
 variable "should_roll" {
   type        = bool
@@ -277,4 +287,32 @@ variable "shutdown_hours" {
   })
   default     = null
   description = "shutdown_hours object"
+}
+
+variable "local_dns_profile" {
+  type = object({
+    mode = string
+    vnet_dns_overrides = optional(map(object({
+      query_logging                   = optional(string, null)
+      protocol                        = optional(string, null)
+      forward_destination             = optional(string, null)
+      forward_policy                  = optional(string, null)
+      max_concurrent                  = optional(number, null)
+      cache_duration_in_seconds       = optional(number, null)
+      serve_stale_duration_in_seconds = optional(number, null)
+      serve_stale                     = optional(string, null)
+    })), null)
+    kube_dns_overrides = optional(map(object({
+      query_logging                   = optional(string, null)
+      protocol                        = optional(string, null)
+      forward_destination             = optional(string, null)
+      forward_policy                  = optional(string, null)
+      max_concurrent                  = optional(number, null)
+      cache_duration_in_seconds       = optional(number, null)
+      serve_stale_duration_in_seconds = optional(number, null)
+      serve_stale                     = optional(string, null)
+    })), null)
+  })
+  default     = null
+  description = "AKS LocalDNS profile configuration for the VNG. Requires VM sizes with at least 4 vCPUs and Linux (Ubuntu 22.04+ or Azure Linux) OS."
 }
