@@ -102,6 +102,11 @@ variable "fallback_to_ondemand" {
   default     = true
   description = "If no spot instance markets are available, enable Ocean to launch on-demand instances instead."
 }
+variable "orientation" {
+  type        = string
+  default     = "cost"
+  description = "Controls and manages optimization priorities. Possible values: cost, availability."
+}
 variable "draining_timeout" {
   type        = number
   default     = null

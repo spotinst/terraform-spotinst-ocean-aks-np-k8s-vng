@@ -45,6 +45,7 @@ module "ocean-aks-np-vng" {
   draining_timeout                          = 600
   should_utilize_commitments                = false
   fallback_to_ondemand                      = true
+  orientation                               = "cost"
   restrict_scale_down                       = true
   tags                                      = { "key1": "value1", "key2": "value2" }
   labels                                    = { "labelkey1": "labelvalue1","labelkey2": "labelvalue2"}
